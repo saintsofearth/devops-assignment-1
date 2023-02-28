@@ -9,4 +9,9 @@ public class HomeController {
 	public String testApi () {
 		return "Response from your service";
 	}
+
+	@PostMapping("fetch/profile")
+	public List<String> fetchUserProfile (@RequestBody User user) {
+		return homeRepository.getUserProfile(user);
+	}
 }
